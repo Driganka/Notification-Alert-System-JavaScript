@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
     res.send('Hello World :[ ')
 }) ; // Root Route
 
-
 app.use('/api/developers', devRoutes) ; 
+
 
 app.listen(port, () => {
     console.log(`Express Server is running at http://localhost:${port}`) ;

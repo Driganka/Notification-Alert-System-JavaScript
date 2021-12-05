@@ -31,11 +31,11 @@ exports.createNewDeveloper = (req, res) => {
         res.send(400).send({success : false, message : 'Please fill all fields'})
     }else{
         console.log('Valid data') ; 
-        return ;
-        developermodel.createDeveloper(devReqData, (err, employee)=>{
-            if(err)
+        //return ;
+        developermodel.createDeveloper(devReqData, (err, developer)=>{
+            if(err){
             res.send(err) ;
             res.json({status: false, messages: 'Something went wrong', data: developer})
-        })
-    }
-}
+        }
+    })
+} }
