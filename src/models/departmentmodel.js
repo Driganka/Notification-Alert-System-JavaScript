@@ -8,10 +8,10 @@ const department = (dpt) => {
 department.getAllDpt = (result) => {
     dbConn.query('SELECT * FROM TEAM', (err, res) => {
         if(err){
-            console.log('Error while fetching developers..', err) ;
+            console.log('Error while fetching departments..', err) ;
             result(null, err) ;
         }else{
-            console.log('Employees fetched successfully') ;
+            console.log('Departments fetched successfully') ;
             result(null, res);
         }
     }) 
