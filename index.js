@@ -1,5 +1,7 @@
 const express = require('express') ;
 const devRoutes = require('./src/routes/developersroute')
+const dptRoutes = require('./src/routes/departmentroute')
+
 
 const bodyParser = require('body-parser'); 
 
@@ -19,6 +21,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/developers', devRoutes) ; 
 
+app.use('/api/departments', dptRoutes) ; 
 
 app.listen(port, () => {
     console.log(`Express Server is running at http://localhost:${port}`) ;
