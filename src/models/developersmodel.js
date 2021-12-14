@@ -33,6 +33,19 @@ developer.getDevbyID = (did, result) => {
 }
 
 
+// Get Developer department from database
+developer.getDevbyDpt = (dptname, result) => {
+    dbConn.query('SELECT * FROM DEVELOPERS WHERE dptname=?', dptname, (err, res) => {
+        if(err){
+            console.log('Error while fetching developer by department', err) ;
+            result(null, err) ;
+        }else{
+            result(null, res) ;
+        }
+    })
+}
+
+
 // Create new developer
 developer.createDeveloper = (developerReqData, result) => {
     dbConn.query('INSERT INTO DEVELOPERS SET ? ', developerReqData, (err, res) => {

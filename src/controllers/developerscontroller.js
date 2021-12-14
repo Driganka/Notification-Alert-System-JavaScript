@@ -21,6 +21,17 @@ exports.getDevbyId = (req, res) => {
     })
 } ;
 
+
+// Get developers by department
+exports.getDevbyDpt = (req, res) => {
+    console.log(req.params) ; 
+    developermodel.getDevbyDpt(req.params.dptname, (err, developer)=>{
+        if(err) res.send(err) ;
+        console.log('Driganka', developer) ;
+        res.send(developer) ;
+    })
+} ;
+
 //Create New Developer
 exports.createNewDeveloper = (req, res) => {
     console.log('req data', req.body) ;
@@ -40,3 +51,4 @@ exports.createNewDeveloper = (req, res) => {
     
     )
 } }
+

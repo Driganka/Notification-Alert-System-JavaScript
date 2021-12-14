@@ -18,7 +18,7 @@ app.use(bodyParser.json()) ;
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World :[ ')
+    res.send('Notification Alert System')
 }) ; // Root Route
 
 app.use('/api/developers', devRoutes) ; 
