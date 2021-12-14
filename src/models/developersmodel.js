@@ -24,7 +24,7 @@ developer.getAllDevs = (result) => {
 developer.getDevbyID = (did, result) => {
     dbConn.query('SELECT * FROM DEVELOPERS WHERE did=?', did, (err, res) => {
         if(err){
-            console.log('Error while fetching employee by id', err) ;
+            console.log('Error while fetching developer by id', err) ;
             result(null, err) ;
         }else{
             result(null, res) ;
@@ -40,8 +40,9 @@ developer.createDeveloper = (developerReqData, result) => {
             //console.log('Error while inserting data') ; 
             result(null, err) ;  
         }else{
-            console.log('Developer Added Successfully') ;
-            result(res)
+            // result(res)
+            // console.log('Developer Added Successfully') ;
+            console.log(res) ;
         }
     })
 }

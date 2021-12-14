@@ -24,18 +24,19 @@ exports.getDevbyId = (req, res) => {
 //Create New Developer
 exports.createNewDeveloper = (req, res) => {
     console.log('req data', req.body) ;
-    const devReqData = developermodel(req.body) ;
-    console.log('developerReqData', devReqData) ;
+    const devReqData = developermodel.createDeveloper(req.body) ;
+    //console.log('developerReqData', devReqData) ;
     // check null
+    //!req.body
     if(req.body.constructor === Object && Object.keys(req.body).length===0){
         res.send(400).send({success : false, message : 'Please fill all fields'})
     }else{
         console.log('Valid data') ; 
         //return ;
-        developermodel.createDeveloper(devReqData, (err, developer)=>{
-            if(err){
-            res.send(err) ;
-            res.json({status: false, messages: 'Something went wrong', data: developer})
-        }
-    })
+        developermodel.createDeveloper(req.body, (err)=>{
+        res.send(err) ;
+        res.json({status: false, messages: 'Something went wrong', data: req.body})
+    }
+    
+    )
 } }

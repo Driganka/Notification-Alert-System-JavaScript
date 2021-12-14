@@ -3,10 +3,10 @@ const router = express.Router() ;
 
 const messageController = require('../controllers/messageController') ;
 
-// Get All department
+// Get All messages
 router.get('/', messageController.getMsgList) ;
 
-// Get department by ID
+// Get messages by ID
 router.get('/:id', messageController.getMsgbyId ) ;
 
 module.exports = router ;
